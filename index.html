@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web VR Assignment - Multiple 3D Models</title>
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <!-- Environment -->
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+
+<a-scene>
+
+    <!-- 🌍 Environment -->
+    <a-entity environment="preset: forest; dressingAmount: 300"></a-entity>
+
+    <!-- 📦 Assets -->
+    <a-assets>
+        <a-asset-item id="model1" src="model1.glb"></a-asset-item>
+        <a-asset-item id="model2" src="model2.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- 🎥 Camera -->
+    <a-entity position="0 1.6 5">
+        <a-camera wasd-controls look-controls>
+            <a-cursor color="yellow"></a-cursor>
+        </a-camera>
+    </a-entity>
+
+    <!-- 🧍 MODEL 1 -->
+    <a-entity 
+        gltf-model="#model1"
+        position="0 0 -5"
+        scale="0.6 0.6 0.6"
+        onclick="model1Click()">
+    </a-entity>
+
+    <!-- 🧍 MODEL 2 -->
+    <a-entity 
+        gltf-model="#model2"
+        position="0 0 -25"
+        scale="0.2 0.2 0.2"
+        onclick="model2Click()">
+    </a-entity>
+
+    
+    <!-- 🌱 Ground -->
+    <a-plane  width="50" height="50" color="#7BC8A4"></a-plane>
+
+    <!-- ☁️ Sky -->
+    <a-sky color="#87CEEB"></a-sky>
+
+</a-scene>
+
+<!-- 🔊 Interaction Script -->
+<script>
+function model1Click() {
+    alert("Model 1 Clicked!");
+}
+
+function model2Click() {
+    alert("Model 2 Clicked!");
+}
+</script>
+
+</body>
+</html>
