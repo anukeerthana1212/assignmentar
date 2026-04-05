@@ -14,8 +14,8 @@
 
 <a-scene>
 
-    <!-- 🌍 Environment -->
-    <a-entity environment="preset: forest; dressingAmount: 300"></a-entity>
+    <!-- 🌌 Futuristic Environment -->
+    <a-entity environment="preset: tron; dressingAmount: 50; groundColor: #111; grid: cross"></a-entity>
 
     <!-- 📦 Assets -->
     <a-assets>
@@ -33,7 +33,7 @@
     <!-- 🧍 MODEL 1 -->
     <a-entity 
         gltf-model="#model1"
-        position="0 0 -5"
+        position="-2 0 -5"
         scale="0.6 0.6 0.6"
         onclick="model1Click()">
     </a-entity>
@@ -41,17 +41,17 @@
     <!-- 🧍 MODEL 2 -->
     <a-entity 
         gltf-model="#model2"
-        position="0 0 -25"
-        scale="0.2 0.2 0.2"
+        position="2 0 -10"
+        scale="0.3 0.3 0.3"
         onclick="model2Click()">
     </a-entity>
 
-    
-    <!-- 🌱 Ground -->
-    <a-plane  width="50" height="50" color="#7BC8A4"></a-plane>
+    <!-- 💡 Lighting for metallic look -->
+    <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+    <a-entity light="type: point; intensity: 1.5; position: 2 4 2"></a-entity>
 
-    <!-- ☁️ Sky -->
-    <a-sky color="#87CEEB"></a-sky>
+    <!-- 🌌 Sky -->
+    <a-sky color="#000814"></a-sky>
 
 </a-scene>
 
